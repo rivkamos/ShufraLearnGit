@@ -39,11 +39,9 @@ namespace ProjApi.Controllers
 			{
 				List<Stock>  data = GetStocksData();
 				return data.Where(w => w.Classification.Contains(term) || w.LongName.Contains(term)).ToList();
-
 			}
 			catch (Exception ex)
 			{
-
 				throw;
 			}
 		}
@@ -58,7 +56,6 @@ namespace ProjApi.Controllers
 			}
 			catch (Exception ex)
 			{
-
 				throw;
 			}
 		}
