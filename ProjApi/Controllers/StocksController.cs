@@ -64,7 +64,7 @@ namespace ProjApi.Controllers
 		}
 
 		[HttpGet("Search")]
-		public List<Stock> Search([FromBody]  List<double> range)
+		public List<Stock> Search([FromQuery(Name = "range")]  List<double> range)
 		{
 			try
 			{
