@@ -15,7 +15,6 @@ namespace ProjApi.Controllers
 	[Route("api/[controller]")]
 	public class StocksController : ControllerBase
 	{
-		private readonly ILogger<StocksController> _logger;
 		private readonly IDataService _service;
 		private readonly IMemoryCache _memoryCache;
 		private readonly string cacheKey = "stocksData";
@@ -25,9 +24,8 @@ namespace ProjApi.Controllers
 			Priority = CacheItemPriority.High,
 			SlidingExpiration = TimeSpan.FromSeconds(20)
 		};
-		public StocksController(ILogger<StocksController> logger, IDataService services, IMemoryCache memoryCache)
+		public StocksController( IDataService services, IMemoryCache memoryCache)
 		{
-			_logger = logger;
 			_service = services;
 			_memoryCache = memoryCache;
 		}
